@@ -42,8 +42,8 @@ function changeBodyTheme() {
      }
 };
 
-// function setValidClass (classToAdd, classToRemove) {
-//     body.classList.add(classToAdd);
-//     body.classList.remove(classToRemove);
-// }
+function setValidClass (classToAdd, classToRemove) {
+    body.classList.add(classToAdd);
+    body.classList.remove(classToRemove);
+}
 changeBodyTheme();
