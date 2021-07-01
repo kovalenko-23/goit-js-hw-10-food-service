@@ -15,19 +15,17 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-let isLightTheme = true;
+
 
 toolBarInput.addEventListener('change', (event) => {
     event.preventDefault();
-    if (isLightTheme) {
+    if (event.target.checked) {
         localStorage.setItem('Theme', Theme.DARK);
         setValidClass('dark-theme', 'light-theme');
     } else {
         localStorage.setItem('Theme', Theme.LIGHT);
         setValidClass('light-theme', 'dark-theme');
     }
-
-    isLightTheme = !isLightTheme
 });
 
 function changeBodyTheme() {
