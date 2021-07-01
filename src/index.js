@@ -17,7 +17,7 @@ const Theme = {
 
 
 
-toolBarInput.addEventListener('change', (event) => {
+toolBarInput.addEventListener('change', event => {
     event.preventDefault();
     if (event.target.checked) {
         localStorage.setItem('Theme', Theme.DARK);
@@ -29,15 +29,9 @@ toolBarInput.addEventListener('change', (event) => {
 });
 
 function changeBodyTheme() {
-    const currentTheme = localStorage.getItem('Theme');
-
-    if (currentTheme) {
-        body.classList.add(currentTheme);   
-    }
-
-    if (currentTheme === Theme.DARK) {
-        toolBarInput.checked = true;
-     }
+const currentTheme = localStorage.getItem('Theme') || Theme.LIGHT;
+body.classList.add(currentTheme);
+toolBarInput.checked = currentTheme === Theme.DARK;
 };
 
 function setValidClass (classToAdd, classToRemove) {
@@ -45,3 +39,5 @@ function setValidClass (classToAdd, classToRemove) {
     body.classList.remove(classToRemove);
 }
 changeBodyTheme();
+
+
